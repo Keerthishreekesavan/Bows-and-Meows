@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Marutham ‘Bows and Meows’ Pet Speciality Hospital, Avadi</title>
+<meta name="description" content="Pet speciality hospital in New Vellanur, Avadi. Vaccinations, ultrasound, X-ray, lab tests, surgery and 24-hour monitored inpatient care for dogs and cats.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Figtree:wght@400;500;600;700&family=Hind+Madurai:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #F4F7EE;
+    --surface: #E6EEDF;
+    --ink: #15281D;
+    --muted: #4B5F51;
+    --field: #2C6340;
+    --field-deep: #1C3F2A;
+    --field-soft: #9BC3A1;
+    --turmeric: #EDB12F;
+    --on-turmeric: #15281D;
+    --line: rgba(21, 40, 29, 0.16);
+    --band-bg: #1C3F2A;
+    --band-ink: #EEF4EA;
+    --band-muted: #B9CDBD;
+
+    --serif: "Young Serif", Georgia, "Times New Roman", serif;
+    --sans: "Figtree", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    --tamil: "Hind Madurai", "Noto Sans Tamil", "Latha", sans-serif;
+
+    color-scheme: light;
+    box-sizing: border-box;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #0F1A13;
+      --surface: #17271D;
+      --ink: #E7EFE3;
+      --muted: #A7B9AB;
+      --field: #86C495;
+      --field-deep: #0B140E;
+      --field-soft: #2F5A3C;
+      --turmeric: #F2C14E;
+      --line: rgba(231, 239, 227, 0.16);
+      --band-bg: #17271D;
+      --band-ink: #E7EFE3;
+      --band-muted: #A7B9AB;
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #0F1A13;
+    --surface: #17271D;
+    --ink: #E7EFE3;
+    --muted: #A7B9AB;
+    --field: #86C495;
+    --field-deep: #0B140E;
+    --field-soft: #2F5A3C;
+    --turmeric: #F2C14E;
+    --line: rgba(231, 239, 227, 0.16);
+    --band-bg: #17271D;
+    --band-ink: #E7EFE3;
+    --band-muted: #A7B9AB;
+    color-scheme: dark;
+  }
+
+  *, *::before, *::after { box-sizing: inherit; }
+  html { scroll-behavior: smooth; scroll-padding-top: calc(env(safe-area-inset-top, 0px) + 80px); }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 1.0625rem;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  img, svg { max-width: 100%; }
+  a { color: inherit; }
+  :focus-visible { outline: 3px solid var(--turmeric); outline-offset: 3px; border-radius: 6px; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { animation: none !important; transition: none !important; }
+  }
+
+  .wrap { width: 100%; max-width: 1120px; margin: 0 auto; padding: 0 clamp(1.25rem, 4vw, 2.5rem); }
+
+  /* Header */
+  body::before {
+    content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px);
+    z-index: 10; background: var(--paper);
+  }
+  .site-header {
+    position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20;
+    background: color-mix(in srgb, var(--paper) 92%, transparent);
+    backdrop-filter: saturate(1.4) blur(10px);
+    -webkit-backdrop-filter: saturate(1.4) blur(10px);
+    border-bottom: 1px solid var(--line);
+  }
+  .site-header .wrap { display: flex; align-items: center; justify-content: space-between; gap: 1rem; min-height: 68px; }
+  .brand { text-decoration: none; display: flex; flex-direction: column; line-height: 1.1; }
+  .brand-tamil { font-family: var(--tamil); font-weight: 600; font-size: 0.8rem; color: var(--field); letter-spacing: 0.02em; }
+  .brand-name { font-family: var(--serif); font-size: 1.3rem; }
+  .nav { display: flex; align-items: center; gap: 1.75rem; }
+  .nav a.link { text-decoration: none; font-weight: 500; font-size: 0.95rem; color: var(--muted); }
+  .nav a.link:hover { color: var(--ink); }
+
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
+    font: 600 1rem/1 var(--sans); text-decoration: none;
+    padding: 0.95rem 1.4rem; border-radius: 999px; border: 2px solid transparent;
+    transition: transform 0.15s ease, background-color 0.15s ease;
+  }
+  .btn:active { transform: translateY(1px); }
+  .btn-primary { background: var(--turmeric); color: var(--on-turmeric); }
+  .btn-primary:hover { background: color-mix(in srgb, var(--turmeric) 85%, #fff); }
+  .btn-ghost { border-color: var(--ink); color: var(--ink); }
+  .btn-ghost:hover { background: var(--surface); }
+  .btn-sm { padding: 0.7rem 1.1rem; font-size: 0.92rem; }
+  .btn svg { width: 1.1em; height: 1.1em; flex: none; }
+
+  /* Hero */
+  .hero { padding: clamp(2.5rem, 7vw, 5rem) 0 0; overflow-x: clip; position: relative; z-index: 1; }
+  .hero .wrap { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: clamp(1.5rem, 4vw, 3.5rem); align-items: end; }
+  .hero-name { font-family: var(--serif); font-size: 1.05rem; color: var(--field); margin: 0 0 1.25rem; }
+  h1 {
+    font-family: var(--serif); font-weight: 400;
+    font-size: clamp(2.4rem, 5.6vw, 4.1rem); line-height: 1.04; letter-spacing: -0.015em;
+    margin: 0 0 1.25rem; max-width: 14ch;
+  }
+  .hero-lede { font-size: 1.15rem; color: var(--muted); max-width: 46ch; margin: 0 0 2rem; }
+  .actions { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+  .rating {
+    display: flex; align-items: center; gap: 0.75rem; margin-top: 2rem; padding-bottom: clamp(2.5rem, 6vw, 4.5rem);
+    font-size: 0.95rem; color: var(--muted);
+  }
+  .rating strong { font-family: var(--serif); font-weight: 400; font-size: 1.6rem; color: var(--ink); }
+  .stars { color: var(--turmeric); letter-spacing: 0.1em; font-size: 1.05rem; }
+
+  .hero-art {
+    align-self: end; position: relative; z-index: 1; margin-bottom: -20px; padding-top: 1.5rem;
+  }
+  .hero-art svg { display: block; width: 100%; height: auto; overflow: visible; }
+  .art-hint { position: absolute; top: 0; right: 0; margin: 0; font-size: 0.85rem; color: var(--muted); }
+  .cloud { fill: var(--surface); }
+  .cloud-a { animation: drift 14s ease-in-out infinite alternate; }
+  .cloud-c { animation: drift 22s ease-in-out infinite alternate; }
+  .cloud-b { animation: drift 18s ease-in-out infinite alternate-reverse; }
+  @keyframes drift { from { transform: translateX(-14px); } to { transform: translateX(18px); } }
+  .pupil { fill: var(--field-deep); }
+  :root .cat-eye { fill: var(--turmeric); }
+  .pet-btn { cursor: pointer; -webkit-tap-highlight-color: transparent; }
+  .pet-btn:focus { outline: none; }
+  .pet-btn:focus-visible .pet { stroke: var(--turmeric); stroke-width: 4; }
+  .hop { transform-box: fill-box; transform-origin: 50% 100%; }
+  .hop.jump { animation: jump 0.55s cubic-bezier(.3,.7,.3,1); }
+  @keyframes jump { 0% { transform: none; } 30% { transform: translateY(-22px) scaleY(1.03); } 60% { transform: translateY(0) scaleY(0.96); } 100% { transform: none; } }
+  .dog-tail { transform-box: fill-box; transform-origin: 100% 85%; animation: wag 0.7s ease-in-out infinite alternate; }
+  #dog.excited .dog-tail { animation-duration: 0.16s; }
+  @keyframes wag { from { transform: rotate(-10deg); } to { transform: rotate(16deg); } }
+  .cat-tail { transform-box: fill-box; transform-origin: 0% 95%; animation: sway 2.6s ease-in-out infinite alternate; }
+  @keyframes sway { from { transform: rotate(-8deg); } to { transform: rotate(7deg); } }
+  .blink { transform-box: fill-box; transform-origin: 50% 50%; animation: blink 5s infinite; }
+  .blink-late { animation-delay: 2.2s; }
+  @keyframes blink { 0%, 94%, 100% { transform: none; } 97% { transform: scaleY(0.1); } }
+  .bubble { transform-box: fill-box; transform-origin: 50% 100%; opacity: 0; transform: scale(0.6); transition: opacity 0.18s ease, transform 0.25s cubic-bezier(.3,1.6,.5,1); pointer-events: none; }
+  .bubble.show { opacity: 1; transform: none; }
+  .bubble rect, .bubble path { fill: var(--ink); }
+  .bubble text { fill: var(--paper); font-family: var(--serif); font-size: 17px; }
+  .butterfly { cursor: pointer; }
+  .wing { fill: var(--turmeric); transform-box: fill-box; animation: flap 0.22s ease-in-out infinite alternate; }
+  .wing-l { transform-origin: 100% 50%; }
+  .wing-r { transform-origin: 0% 50%; }
+  .bf-small .wing { fill: var(--field); animation-duration: 0.18s; }
+  .bf-body { fill: var(--field-deep); }
+  @keyframes flap { from { transform: scaleX(1); } to { transform: scaleX(0.45); } }
+  .sun { fill: var(--turmeric); animation: rise 1.4s cubic-bezier(.2,.7,.2,1) both; }
+  .row-1 { fill: var(--field-soft); }
+  .row-2 { fill: var(--field); }
+  .row-3 { fill: var(--field-deep); }
+  .stalk { stroke: var(--field); stroke-width: 2.4; stroke-linecap: round; fill: none; }
+  .pet { fill: var(--field-deep); }
+  .pet-eye { fill: var(--paper); }
+  .cat-eye { fill: var(--turmeric); }
+  .pets { animation: settle 1s 0.35s cubic-bezier(.2,.7,.2,1) both; }
+  @keyframes rise { from { transform: translateY(70px); opacity: 0; } to { transform: none; opacity: 1; } }
+  @keyframes settle { from { transform: translateY(14px); opacity: 0; } to { transform: none; opacity: 1; } }
+
+  /* Field band */
+  .field-band { display: block; width: 100%; height: 56px; margin-top: -1px; }
+  .field-band .row-3 { fill: var(--field-deep); }
+
+  /* Reviews */
+  .reviews { background: var(--field-deep); color: #EEF4EA; padding: 0 0 clamp(2.5rem, 6vw, 4rem); margin-top: -1px; }
+  .reviews .wrap { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(1.5rem, 4vw, 3rem); }
+  .reviews blockquote { margin: 0; }
+  .reviews p { font-family: var(--serif); font-size: clamp(1.25rem, 2.4vw, 1.6rem); line-height: 1.35; margin: 0 0 0.75rem; }
+  .reviews cite { font-style: normal; font-size: 0.9rem; color: #B9CDBD; }
+
+  /* Sections */
+  section.block { padding: clamp(3.5rem, 8vw, 6rem) 0; }
+  h2 { font-family: var(--serif); font-weight: 400; font-size: clamp(1.9rem, 3.6vw, 2.75rem); line-height: 1.1; margin: 0 0 0.75rem; letter-spacing: -0.01em; }
+  .section-intro { color: var(--muted); max-width: 52ch; margin: 0 0 2.5rem; }
+
+  .services { border-top: 2px solid var(--ink); }
+  .service-group {
+    display: grid; grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr); gap: 1rem 3rem;
+    padding: 1.75rem 0; border-bottom: 1px solid var(--line);
+  }
+  .service-group h3 { font-family: var(--serif); font-weight: 400; font-size: 1.45rem; line-height: 1.2; margin: 0 0 0.35rem; }
+  .service-group .note { color: var(--muted); font-size: 0.95rem; margin: 0; max-width: 34ch; }
+  .service-group ul { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem 1.5rem; align-content: start; }
+  .service-group li { position: relative; padding-left: 1.25rem; }
+  .service-group li::before {
+    content: ""; position: absolute; left: 0; top: 0.62em; width: 0.5rem; height: 0.5rem;
+    border-radius: 50%; background: var(--turmeric);
+  }
+
+  /* Inpatient */
+  .stay { background: var(--surface); }
+  .stay .wrap { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2rem, 5vw, 4rem); align-items: center; }
+  .stay-facts { display: grid; gap: 0; border-top: 1px solid var(--line); }
+  .fact { display: grid; grid-template-columns: 3rem 1fr; gap: 1rem; padding: 1.25rem 0; border-bottom: 1px solid var(--line); align-items: start; }
+  .fact-icon { width: 3rem; height: 3rem; border-radius: 50%; background: var(--paper); display: grid; place-items: center; color: var(--field); }
+  .fact-icon svg { width: 1.4rem; height: 1.4rem; }
+  .fact h3 { font-size: 1.05rem; font-weight: 600; margin: 0.15rem 0 0.2rem; }
+  .fact p { margin: 0; color: var(--muted); font-size: 0.97rem; }
+
+  /* Visit */
+  .visit-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: clamp(2rem, 5vw, 4rem); align-items: start; }
+  .address { font-family: var(--serif); font-size: clamp(1.35rem, 2.6vw, 1.75rem); line-height: 1.3; margin: 0 0 1.5rem; font-style: normal; }
+  .phone { font-family: var(--serif); font-size: clamp(1.8rem, 4vw, 2.6rem); text-decoration: none; display: inline-block; margin-bottom: 1.5rem; border-bottom: 3px solid var(--turmeric); line-height: 1.15; }
+  .hours { border: 2px solid var(--ink); border-radius: 20px; padding: 1.5rem 1.75rem; }
+  .hours h3 { font-family: var(--serif); font-weight: 400; font-size: 1.4rem; margin: 0 0 1rem; }
+  .hours dl { margin: 0; display: grid; gap: 1rem; }
+  .hours dt { font-weight: 600; }
+  .hours dd { margin: 0.1rem 0 0; color: var(--muted); }
+
+  footer { border-top: 1px solid var(--line); padding: 2rem 0 2.5rem; color: var(--muted); font-size: 0.9rem; }
+  footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem; }
+
+  /* Mobile call bar */
+  .call-bar { display: none; }
+
+  @media (max-width: 860px) {
+    .nav a.link { display: none; }
+    .hero .wrap { grid-template-columns: 1fr; }
+    .hero-art { max-width: 420px; justify-self: center; width: 100%; }
+    .art-hint { left: 0; text-align: center; }
+    .rating { padding-bottom: 0.5rem; }
+    .reviews .wrap, .stay .wrap, .visit-grid { grid-template-columns: 1fr; }
+    .service-group { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 560px) {
+    .service-group ul { grid-template-columns: 1fr; }
+    .site-header .btn-sm { display: none; }
+    body { padding-bottom: calc(76px + env(safe-area-inset-bottom, 0px)); }
+    .call-bar {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem;
+      position: fixed; left: 0; right: 0; bottom: 0; z-index: 30;
+      padding: 0.7rem 1rem calc(0.7rem + env(safe-area-inset-bottom, 0px));
+      background: var(--paper); border-top: 1px solid var(--line);
+    }
+    .call-bar .btn { padding: 0.85rem 1rem; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Bows and Meows, home">
+      <span class="brand-tamil" lang="ta">மருதம்</span>
+      <span class="brand-name">Bows &amp; Meows</span>
+    </a>
+    <nav class="nav" aria-label="Main">
+      <a class="link" href="#services">Services</a>
+      <a class="link" href="#stay">Inpatient care</a>
+      <a class="link" href="#visit">Visit</a>
+      <a class="btn btn-primary btn-sm" href="tel:+919940037043">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
+        Call now
+      </a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <p class="hero-name">Marutham ‘Bows and Meows’ Pet Speciality Hospital</p>
+        <h1>Everything your dog or cat needs, under one roof in Avadi.</h1>
+        <p class="hero-lede">Vaccinations and check-ups, ultrasound and X-ray, lab tests, surgery, and inpatient care with round-the-clock CCTV. Right by Vel Tech junction, New Vellanur.</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="tel:+919940037043">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
+            Call 099400 37043
+          </a>
+          <a class="btn btn-ghost" href="https://www.justdial.com/online-consult/hospital?action=BA&amp;docid=044PXX44.XX44.210914041336.U4K1" target="_blank" rel="noopener">Book online</a>
+        </div>
+        <div class="rating">
+          <strong>4.8</strong>
+          <div>
+            <div class="stars" aria-hidden="true">★★★★★</div>
+            <div>Rated by 416 pet parents on Google</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-art">
+        <p class="art-hint">Tap the dog or the cat to say hello</p>
+        <svg id="scene" viewBox="-20 -250 520 650" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <pattern id="stalks" width="22" height="26" patternUnits="userSpaceOnUse">
+              <path class="stalk" d="M6 26 C6 18 4 12 2 6" />
+              <path class="stalk" d="M14 26 C14 17 16 11 19 4" />
+            </pattern>
+            <clipPath id="mound"><path d="M-20 400 C0 252 480 252 500 400 Z"/></clipPath>
+            <clipPath id="mound-up"><path d="M-20 378 C0 230 480 230 500 378 V400 H-20 Z"/></clipPath>
+          </defs>
+
+          <g aria-hidden="true">
+            <g class="cloud cloud-a"><ellipse cx="90" cy="-70" rx="54" ry="18"/><ellipse cx="66" cy="-82" rx="26" ry="20"/><ellipse cx="104" cy="-90" rx="32" ry="26"/></g>
+            <g class="cloud cloud-c"><ellipse cx="300" cy="-190" rx="40" ry="12"/><ellipse cx="288" cy="-200" rx="20" ry="14"/><ellipse cx="312" cy="-205" rx="24" ry="18"/></g>
+            <g class="cloud cloud-b"><ellipse cx="400" cy="-10" rx="44" ry="14"/><ellipse cx="384" cy="-22" rx="22" ry="16"/><ellipse cx="412" cy="-28" rx="26" ry="20"/></g>
+            <circle class="sun" cx="350" cy="120" r="64"/>
+            <rect x="-20" y="230" width="520" height="80" fill="url(#stalks)" clip-path="url(#mound-up)"/>
+            <g clip-path="url(#mound)">
+              <rect class="row-1" x="-20" y="240" width="520" height="160"/>
+              <path class="row-2" d="M-20 326 Q140 310 260 320 T500 316 V400 H-20 Z"/>
+              <path class="row-3" d="M-20 360 Q160 346 300 356 T500 352 V400 H-20 Z"/>
+            </g>
+          </g>
+
+          <g class="pets">
+            <g id="dog" class="pet-btn" tabindex="0" role="button" aria-label="Say hello to the dog">
+              <g class="hop">
+                <g class="dog-tail"><path class="pet" d="M114 298 C82 294 68 270 78 250 C82 262 92 276 114 278 Z"/></g>
+                <path class="pet" d="M112 302 C96 262 104 214 140 196 C170 182 204 196 214 230 L222 302 Z"/>
+                <circle class="pet" cx="196" cy="168" r="38"/>
+                <path class="pet" d="M214 160 C236 160 252 170 254 182 C256 194 244 202 226 200 L206 196 Z"/>
+                <path class="pet dog-ear" d="M168 142 C150 146 142 170 150 198 C158 206 170 200 172 186 C176 168 178 152 168 142 Z"/>
+                <rect class="pet" x="196" y="240" width="22" height="64" rx="11"/>
+                <g class="blink"><circle class="pet-eye" cx="208" cy="160" r="5.5"/><circle class="pupil" id="dog-pupil" cx="208" cy="160" r="2.8"/></g>
+              </g>
+            </g>
+
+            <g id="cat" class="pet-btn" tabindex="0" role="button" aria-label="Say hello to the cat">
+              <g class="hop">
+                <g class="cat-tail"><path class="pet" d="M352 302 C392 302 410 276 400 244 C396 230 384 226 380 234 C390 252 388 280 348 284 Z"/></g>
+                <path class="pet" d="M290 306 C280 276 286 236 312 222 C336 210 362 226 366 258 C370 284 362 302 356 306 Z"/>
+                <circle class="pet" cx="318" cy="196" r="32"/>
+                <path class="pet" d="M292 186 L294 146 L318 168 Z"/>
+                <path class="pet" d="M320 166 L342 144 L346 186 Z"/>
+                <g class="blink blink-late">
+                  <ellipse class="cat-eye" cx="306" cy="196" rx="5" ry="7"/>
+                  <ellipse class="cat-eye" cx="330" cy="196" rx="5" ry="7"/>
+                  <ellipse class="pupil" id="cat-pupil-l" cx="306" cy="196" rx="1.4" ry="5"/>
+                  <ellipse class="pupil" id="cat-pupil-r" cx="330" cy="196" rx="1.4" ry="5"/>
+                </g>
+              </g>
+            </g>
+          </g>
+
+          <g aria-hidden="true">
+            <g transform="translate(120 96)"><g class="bubble" id="dog-bubble">
+              <rect x="-52" y="-24" width="104" height="40" rx="20"/>
+              <path d="M18 14 L34 34 L4 15 Z"/>
+              <text x="0" y="3" text-anchor="middle" dominant-baseline="middle">Bow bow!</text>
+            </g></g>
+            <g transform="translate(396 130)"><g class="bubble" id="cat-bubble">
+              <rect x="-42" y="-24" width="84" height="40" rx="20"/>
+              <path d="M-26 14 L-48 36 L-10 15 Z"/>
+              <text x="0" y="3" text-anchor="middle" dominant-baseline="middle">Meow!</text>
+            </g></g>
+
+            <g class="butterfly" id="bf1"><g class="bf-tilt">
+              <g class="wing wing-l"><ellipse cx="-8" cy="-5" rx="9" ry="11"/><ellipse cx="-6" cy="8" rx="6" ry="7"/></g>
+              <g class="wing wing-r"><ellipse cx="8" cy="-5" rx="9" ry="11"/><ellipse cx="6" cy="8" rx="6" ry="7"/></g>
+              <rect class="bf-body" x="-1.6" y="-11" width="3.2" height="24" rx="1.6"/>
+            </g></g>
+            <g class="butterfly bf-small" id="bf2"><g class="bf-tilt">
+              <g class="wing wing-l"><ellipse cx="-8" cy="-5" rx="9" ry="11"/><ellipse cx="-6" cy="8" rx="6" ry="7"/></g>
+              <g class="wing wing-r"><ellipse cx="8" cy="-5" rx="9" ry="11"/><ellipse cx="6" cy="8" rx="6" ry="7"/></g>
+              <rect class="bf-body" x="-1.6" y="-11" width="3.2" height="24" rx="1.6"/>
+            </g></g>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <svg class="field-band" viewBox="0 0 1200 56" preserveAspectRatio="none" aria-hidden="true">
+    <path class="row-3" d="M0 30 Q300 10 600 26 T1200 20 V56 H0 Z"/>
+  </svg>
+
+  <section class="reviews" aria-label="What pet parents say">
+    <div class="wrap">
+      <blockquote>
+        <p>“Well treated and nice experience with the doctor. Hands off to the cleanliness.”</p>
+        <cite>Google review</cite>
+      </blockquote>
+      <blockquote>
+        <p>“Admired the service. Best treatment in reasonable price.”</p>
+        <cite>Google review</cite>
+      </blockquote>
+    </div>
+  </section>
+
+  <section class="block" id="services">
+    <div class="wrap">
+      <h2>What we do</h2>
+      <p class="section-intro">From a puppy’s first vaccine to orthopaedic surgery, most of what your pet will ever need happens here, without being sent across the city for a scan or a test.</p>
+
+      <div class="services">
+        <div class="service-group">
+          <div>
+            <h3>Check-ups and vaccines</h3>
+            <p class="note">Routine care that keeps small problems small.</p>
+          </div>
+          <ul>
+            <li>General health check-ups</li>
+            <li>Immunisation for puppies, kittens and adults</li>
+            <li>Diet and nutrition advice</li>
+            <li>Emergency consultations</li>
+          </ul>
+        </div>
+
+        <div class="service-group">
+          <div>
+            <h3>Scans and lab tests</h3>
+            <p class="note">Answers in-house, so treatment can start sooner.</p>
+          </div>
+          <ul>
+            <li>Digital ultrasonography</li>
+            <li>Radiography (X-ray)</li>
+            <li>High-definition microscopy</li>
+            <li>Blood, urine and hormone tests</li>
+          </ul>
+        </div>
+
+        <div class="service-group">
+          <div>
+            <h3>Surgery</h3>
+            <p class="note">Planned and performed with gas anaesthesia for major procedures.</p>
+          </div>
+          <ul>
+            <li>Routine surgeries, including neutering</li>
+            <li>Major soft-tissue surgery</li>
+            <li>Orthopaedic surgery</li>
+            <li>Gaseous anaesthesia</li>
+          </ul>
+        </div>
+
+        <div class="service-group">
+          <div>
+            <h3>Critical and inpatient care</h3>
+            <p class="note">For pets who need watching after surgery or illness.</p>
+          </div>
+          <ul>
+            <li>Oxygen therapy</li>
+            <li>Critical care</li>
+            <li>Post-op wards for dogs and cats</li>
+            <li>24-hour CCTV monitoring</li>
+          </ul>
+        </div>
+
+        <div class="service-group">
+          <div>
+            <h3>Travel, grooming and supplies</h3>
+            <p class="note">The paperwork and the pampering.</p>
+          </div>
+          <ul>
+            <li>Microchipping</li>
+            <li>Travel health certificates</li>
+            <li>Pet grooming</li>
+            <li>Pet shop on site</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block stay" id="stay">
+    <div class="wrap">
+      <div>
+        <h2>When your pet has to stay overnight</h2>
+        <p class="section-intro" style="margin-bottom:1.75rem">Leaving them behind is the hard part. Our inpatient ward is set up so they’re never unwatched while they recover.</p>
+        <a class="btn btn-primary" href="tel:+919940037043">Ask about inpatient care</a>
+      </div>
+      <div class="stay-facts">
+        <div class="fact">
+          <div class="fact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 8h14v8H2z"/><path d="M16 11l6-3v8l-6-3"/></svg></div>
+          <div><h3>24-hour CCTV</h3><p>Every recovering pet is on camera, day and night.</p></div>
+        </div>
+        <div class="fact">
+          <div class="fact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3c3 4 6 7 6 11a6 6 0 0 1-12 0c0-4 3-7 6-11z"/></svg></div>
+          <div><h3>Oxygen therapy on hand</h3><p>For pets who need breathing support after surgery or in an emergency.</p></div>
+        </div>
+        <div class="fact">
+          <div class="fact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12h4l3-8 4 16 3-8h4"/></svg></div>
+          <div><h3>Gas anaesthesia</h3><p>A safer, more controllable option for major surgery.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="visit">
+    <div class="wrap visit-grid">
+      <div>
+        <h2>Visit us</h2>
+        <address class="address">No. 6, Ramanan Road, New Vellanur,<br>near Vel Tech junction, Avadi,<br>Tamil Nadu 600062</address>
+        <a class="phone" href="tel:+919940037043">099400 37043</a>
+        <div class="actions">
+          <a class="btn btn-primary" href="https://maps.google.com/?q=Marutham+Bows+and+Meows+Pet+Speciality+Hospital+Avadi" target="_blank" rel="noopener">Get directions</a>
+          <a class="btn btn-ghost" href="https://www.justdial.com/online-consult/hospital?action=BA&amp;docid=044PXX44.XX44.210914041336.U4K1" target="_blank" rel="noopener">Book online</a>
+        </div>
+      </div>
+      <div class="hours">
+        <h3>Before you come</h3>
+        <dl>
+          <div><dt>Opening time</dt><dd>We open at 10:30 am. Call to confirm today’s hours.</dd></div>
+          <div><dt>Busiest time</dt><dd>Evenings around 7 pm. Come earlier for a shorter wait.</dd></div>
+          <div><dt>How long it takes</dt><dd>Most visits take between 20 minutes and 2 hours.</dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Marutham ‘Bows and Meows’ Pet Speciality Hospital</span>
+    <span>New Vellanur, Avadi, Chennai</span>
+  </div>
+</footer>
+
+<div class="call-bar">
+  <a class="btn btn-primary" href="tel:+919940037043">Call now</a>
+  <a class="btn btn-ghost" href="https://maps.google.com/?q=Marutham+Bows+and+Meows+Pet+Speciality+Hospital+Avadi" target="_blank" rel="noopener">Directions</a>
+</div>
+
+<script>
+(function () {
+  var svg = document.getElementById('scene');
+  if (!svg) return;
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // Pets say hello
+  function hello(petId, bubbleId) {
+    var pet = document.getElementById(petId);
+    var hop = pet.querySelector('.hop');
+    var bubble = document.getElementById(bubbleId);
+    var timer;
+    function go() {
+      hop.classList.remove('jump'); void hop.getBBox(); hop.classList.add('jump');
+      bubble.classList.add('show');
+      pet.classList.add('excited');
+      clearTimeout(timer);
+      timer = setTimeout(function () { bubble.classList.remove('show'); pet.classList.remove('excited'); }, 1400);
+    }
+    pet.addEventListener('click', go);
+    pet.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); go(); }
+    });
+  }
+  hello('dog', 'dog-bubble');
+  hello('cat', 'cat-bubble');
+
+  // Butterflies
+  var flies = [
+    { el: document.getElementById('bf1'), s: 1.7, cx: 280, cy: -90, ax: 160, ay: 110, w1: 0.55, w2: 1.1, p: 0, t: 0, speed: 1, x: 0, y: 0 },
+    { el: document.getElementById('bf2'), s: 1.25, cx: 140, cy: -40, ax: 120, ay: 90, w1: 0.7, w2: 1.3, p: 2, t: 4, speed: 1, x: 0, y: 0 }
+  ];
+  function place(f, dt) {
+    f.speed += (1 - f.speed) * Math.min(1, dt * 1.5);
+    f.t += dt * f.speed;
+    var nx = f.cx + f.ax * Math.sin(f.t * f.w1 + f.p);
+    var ny = f.cy + f.ay * Math.sin(f.t * f.w2 + f.p * 0.7);
+    var tilt = Math.max(-25, Math.min(25, (nx - f.x) * 6));
+    f.x = nx; f.y = ny;
+    f.el.setAttribute('transform', 'translate(' + nx.toFixed(1) + ' ' + ny.toFixed(1) + ') rotate(' + tilt.toFixed(1) + ') scale(' + f.s + ')');
+  }
+  // On narrow screens, trim the sky so the scene stays compact
+  if (window.matchMedia && window.matchMedia('(max-width: 860px)').matches) {
+    svg.setAttribute('viewBox', '-20 -130 520 530');
+    var hiCloud = svg.querySelector('.cloud-c'); if (hiCloud) hiCloud.style.display = 'none';
+    flies[0].cy = -40; flies[0].ay = 60;
+    flies[1].cy = 0; flies[1].ay = 50;
+  }
+  flies.forEach(function (f) {
+    place(f, 0);
+    f.el.addEventListener('pointerenter', function () { f.speed = 6; });
+    f.el.addEventListener('click', function () { f.speed = 8; });
+  });
+
+  // Eyes follow the pointer, or the butterfly when idle
+  var pointer = null, lastMove = -1e9;
+  function toSvg(cx, cy) {
+    var m = svg.getScreenCTM(); if (!m) return null;
+    var pt = svg.createSVGPoint(); pt.x = cx; pt.y = cy;
+    return pt.matrixTransform(m.inverse());
+  }
+  window.addEventListener('pointermove', function (e) {
+    pointer = toSvg(e.clientX, e.clientY); lastMove = performance.now();
+  }, { passive: true });
+  window.addEventListener('pointerdown', function (e) {
+    pointer = toSvg(e.clientX, e.clientY); lastMove = performance.now();
+  }, { passive: true });
+
+  var eyes = [
+    { el: document.getElementById('dog-pupil'), x: 208, y: 160, rx: 2.4, ry: 2.4, ax: 'cx', ay: 'cy' },
+    { el: document.getElementById('cat-pupil-l'), x: 306, y: 196, rx: 2.6, ry: 1.4, ax: 'cx', ay: 'cy' },
+    { el: document.getElementById('cat-pupil-r'), x: 330, y: 196, rx: 2.6, ry: 1.4, ax: 'cx', ay: 'cy' }
+  ];
+  function look(target) {
+    eyes.forEach(function (e) {
+      var dx = target.x - e.x, dy = target.y - e.y, d = Math.hypot(dx, dy) || 1;
+      var k = Math.min(1, d / 60);
+      e.el.setAttribute('cx', (e.x + dx / d * e.rx * k).toFixed(2));
+      e.el.setAttribute('cy', (e.y + dy / d * e.ry * k).toFixed(2));
+    });
+  }
+
+  var last = performance.now();
+  function frame(now) {
+    var dt = Math.min(0.05, (now - last) / 1000); last = now;
+    if (!reduce) flies.forEach(function (f) { place(f, dt); });
+    var target = (pointer && now - lastMove < 2500) ? pointer : { x: flies[0].x, y: flies[0].y };
+    look(target);
+    requestAnimationFrame(frame);
+  }
+  requestAnimationFrame(frame);
+})();
+</script>
+</body>
+</html>
